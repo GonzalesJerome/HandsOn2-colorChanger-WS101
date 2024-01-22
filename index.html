@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript colorChanger() Hands-On</title>
+    <link rel="stylesheet" href="styles.css">
+<style>
+    body {
+    font-family: 'Arial', sans-serif;
+    background-color:black;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    font: arial;
+    color: #f3efef;
+    margin-bottom: 30px;
+}
+
+button {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: 1px color: White;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: transparent;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+
+
+button:active {
+  scale: 0.92;
+}
+
+button:hover {
+  background: color: #ff2b89;
+  background: #ff2b89
+}
+
+#colorDiv {
+    width: 500px;
+    height: 250px;
+    margin-top: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.green {
+    background-color: #27ae60;
+}
+
+.blue {
+    background-color: #3498db;
+}
+
+</style>
+</head>
+<body>
+
+    <h1>JavaScript colorChanger() Hands-On</h1>
+
+    
+    <button id="colorButton">Click Me</button>
+    
+    <div id="colorDiv" class="green"></div>
+
+<script>
+        
+    const colorButton = document.getElementById("colorButton");
+    const colorDiv = document.getElementById("colorDiv");
+
+
+    colorButton.addEventListener("click", function () {
+    
+        if (colorDiv.classList.contains("green")) {
+    
+        colorDiv.classList.remove("green");
+        colorDiv.classList.add("blue");
+      } else {
+        
+        colorDiv.classList.remove("blue");
+        colorDiv.classList.add("green");
+    }
+});
+
+</script>
+
+</body>
+</html>
